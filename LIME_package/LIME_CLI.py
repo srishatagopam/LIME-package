@@ -116,6 +116,7 @@ def main(options):
     filename = os.path.split(options.filePath)[-1]
     if options.output:
         savePath = f"{options.output}{filename}"
+        print(savePath)
         plt.imsave(savePath, lime.R)
     if options.map:
         savePath = f"{options.output}map_{filename}"
