@@ -115,7 +115,7 @@ def main(options):
     lime.enhance()
     filename = os.path.split(options.filePath)[-1]
     if options.output:
-        savePath = f"{filename}"
+        savePath = f"{options.output}enhanced_{filename}"
         plt.imsave(savePath, lime.R)
     if options.map:
         savePath = f"{options.output}map_{filename}"
