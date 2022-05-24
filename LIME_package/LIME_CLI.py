@@ -42,7 +42,7 @@ class LIME:
         self.row = self.L.shape[0]
         self.col = self.L.shape[1]
 
-        self.T_hat = np.max(self.L, axis=2)
+        self.T_hat = np.max(self.L, axis=2) if len(self.L.shape)==3 else self.L
         self.dv = firstOrderDerivative(self.row)
         self.dh = firstOrderDerivative(self.col, -1)
         self.vecDD = toeplitizMatrix(self.row * self.col, self.row)
