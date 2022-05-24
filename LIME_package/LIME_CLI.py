@@ -39,8 +39,6 @@ class LIME:
 
     def load(self, imgPath):
         self.L = img_as_float(io.imread(imgPath))
-        if len(self.L.shape) !=3:
-            self.L = np.stack((self.L[:, np.newaxis], self.L[:, np.newaxis], self.L[:, np.newaxis]), axis=-1)
         self.row = self.L.shape[0]
         self.col = self.L.shape[1]
 
